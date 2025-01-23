@@ -3,15 +3,15 @@ import requests
 import os
 import sys
 import zipfile
+import yaml
 
-resolution = "1K"
-file_type = "JPG"
-unzip = True
+with open("config.yaml", "r") as f:
+    config = yaml.safe_load(f)
 
-if len(sys.argv) >= 2:
-    resolution = sys.argv[1].upper()
-if len(sys.argv) == 3:
-    file_type = sys.argv[2].upper()
+resolution = config['resolution']
+file_type = config['file_type']
+unzip = config['unzip']
+unzipping_directory = config['unzip']['folder']
 
 if resolution not in ["1K", "2K", "4K", "8K"] or file_type not in ["PNG", "JPG"]:
     print("Invalid format or type. Valid formats: 1k, 2k, 4k, 8k. Valid types: png, jpg.")
@@ -46,4 +46,4 @@ if unzip:
     for file in os.listdir("downloads"):
         with zipfile.ZipFile("downloads/" + file, 'r') as zip_ref:
             print(file + " extracted.")
-            zip_ref.extractall("unzipped/" + file[:-4])
+            zip_ref.extractall(unzipping_directory + "/" + file[:-4])
