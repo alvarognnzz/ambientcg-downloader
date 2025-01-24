@@ -1,9 +1,10 @@
-resolution: "1K"      # (1K, 2K, 4K, 8K)
-file_type: "JPG"      # (JPG/PNG)
+resolution: "1K"                  # (1K, 2K, 4K, 8K)
+file_type: "JPG"                  # (JPG/PNG)
+downloads_folder: "downloads"
 unzip: 
-  enabled: true       # (true/false)
+  enabled: true                   # (true/false)
   folder: "unzipped"
-keep_files:           # Files marked as false will be deleted
+keep_files:                       # Files marked as false will be deleted
   color: true
   roughness: true
   normal_gl: true
