@@ -50,3 +50,52 @@ if unzip:
                 zip_ref.extractall(unzipping_directory + "/" + file[:-4])
             else:
                 print(f"{file} already extracted. Skipping...")
+
+def delete_files(file_type):
+    for directory in os.listdir(unzipping_directory):
+        for file in os.listdir(os.path.join(unzipping_directory, directory)):
+            if file_type in file:
+                print(f'Found {file_type} at {unzipping_directory}/{directory}. Deleting...')
+                os.remove(os.path.join(unzipping_directory, directory, file))
+
+for file_type in config['keep_files']:
+    match file_type:
+        case "color":
+            if not config['keep_files']['color']:
+                delete_files("Color")
+        
+        case "roughness":
+            if not config['keep_files']['roughness']:
+                delete_files("Roughness")
+
+        case "normal_gl":
+            if not config['keep_files']['normal_gl']:
+                delete_files("NormalGL")
+        
+        case "normal_dx":
+            if not config['keep_files']['normal_dx']:
+                delete_files("NormalDX")
+
+        case "metalness":
+            if not config['keep_files']['metalness']:
+                delete_files("Metalness")
+
+        case "opacity":
+            if not config['keep_files']['opacity']:
+                delete_files("Opacity")
+
+        case "ambient_occlusion":
+            if not config['keep_files']['ambient_occlusion']:
+                delete_files("AmbientOcclusion")
+        
+        case "displacement":
+                    if not config['keep_files']['displacement']:
+                        delete_files("Displacement")
+
+        case "cover":
+            if not config['keep_files']['ambient_occlusion']:
+                for directory in os.listdir(unzipping_directory):
+                    for file in os.listdir(os.path.join(unzipping_directory, directory)):
+                        if not any(keyword in file for keyword in ["Color", "Roughness", "NormalGL", "NormalDX","Metalness", "AmbientOcclusion", "Opacity", "Displacement"]):
+                            print(f'Found {file_type} at {unzipping_directory}/{directory}. Deleting...')
+                            os.remove(os.path.join(unzipping_directory, directory, file))
