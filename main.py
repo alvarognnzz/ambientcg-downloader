@@ -44,6 +44,9 @@ with open(csv_file, "r") as file:
 
 if unzip:
     for file in os.listdir("downloads"):
-        with zipfile.ZipFile("downloads/" + file, 'r') as zip_ref:
-            print(file + " extracted.")
-            zip_ref.extractall(unzipping_directory + "/" + file[:-4])
+        with zipfile.ZipFile(f"downloads/{file}", 'r') as zip_ref:
+            if not os.path.exists(f"{unzipping_directory}/{file[:-4]}"):
+                print(file + " extracted.")
+                zip_ref.extractall(unzipping_directory + "/" + file[:-4])
+            else:
+                print(f"{file} already extracted. Skipping...")

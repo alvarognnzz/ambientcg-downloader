@@ -3,3 +3,14 @@ file_type: "JPG"      # (JPG/PNG)
 unzip: 
   enabled: true       # (true/false)
   folder: "unzipped"
+keep_files:
+  ambient_occlusion: true
+  roughness: true
+  normal_gl: true
+  normal_dx: true
+  displacement: true
+  color: true
+  usdc: true
+  mtlx: true
+  cover: true
+  opacity: true
