@@ -34,7 +34,7 @@ You can set up the project in two ways: using **Poetry** or a traditional setup 
    poetry run python main.py
    ```
 
-### Option 2: Without Poetry (using `requirements.txt`)  
+### Option 2: Without Poetry
 1. Clone the repository:  
    ```bash
    git clone https://github.com/alvarognnzz/ambientcg-downloader
@@ -96,4 +96,4 @@ keep_files:                       # Files marked as false will be deleted
 
 > [!WARNING]  
 > The ambientCG texture library is quite large, with a size of up to 10GB at 1K resolution.  
-> If you select a higher resolution (e.g., 2K, 4K, or 8K), the download process may take several hours depending on your internet speed and system performance.
+> If you select a higher resolution (e.g., 2K or 4K), the download process may take several hours depending on your internet speed and system performance.
