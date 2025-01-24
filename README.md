@@ -11,8 +11,6 @@ This repository was created to simplify a repetitive process: downloading textur
 
 With this automation, all textures are pre-downloaded to your computer. Once you find the texture you need on the ambientCG website, you can quickly locate it locally without additional steps.
 
-Here’s the translation and an explanation of how to use the configuration file:  
-
 ## Installation  
 
 You can set up the project in two ways: using **Poetry** or a traditional setup with `requirements.txt`. Choose the poetry if you want to avoid dependencies issues.  
