@@ -2,4 +2,4 @@ resolution: "1K"      # (1K, 2K, 4K, 8K)
 file_type: "JPG"      # (JPG/PNG)
 unzip: 
   enabled: true       # (true/false)
-  folder: "aa"
+  folder: "unzipped"

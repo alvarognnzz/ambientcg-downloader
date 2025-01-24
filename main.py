@@ -18,7 +18,7 @@ if resolution not in ["1K", "2K", "4K", "8K"] or file_type not in ["PNG", "JPG"]
     sys.exit(1)
 
 os.makedirs("downloads", exist_ok=True)
-os.makedirs("unzipped", exist_ok=True)
+os.makedirs(unzipping_directory, exist_ok=True)
 
 csv_url = "https://ambientCG.com/api/v2/downloads_csv"
 response = requests.get(csv_url)
