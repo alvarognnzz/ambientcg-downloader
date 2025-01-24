@@ -13,9 +13,47 @@ With this automation, all textures are pre-downloaded to your computer. Once you
 
 Here’s the translation and an explanation of how to use the configuration file:  
 
----
+## Installation  
 
-## Setting Up the Script  
+You can set up the project in two ways: using **Poetry** or a traditional setup with `requirements.txt`. Choose the poetry if you want to avoid dependencies issues.  
+
+### Option 1: Using Poetry  
+1. Ensure you have [Poetry](https://python-poetry.org/) installed.  
+   ```bash
+   pip install poetry
+   ```
+2. Clone the repository:  
+   ```bash
+   git clone https://github.com/alvarognnzz/ambientcg-downloader
+   cd ambientcg-downloader
+   ```
+3. Install dependencies:  
+   ```bash
+   poetry install
+   ```
+4. Run the script:  
+   ```bash
+   poetry run python main.py
+   ```
+
+### Option 2: Without Poetry (using `requirements.txt`)  
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/alvarognnzz/ambientcg-downloader
+   cd ambientcg-downloader
+   ```
+2. Install dependencies:  
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the script:  
+   ```bash
+   python script.py
+   ```
+
+Both methods will set up the environment for running the project. If you're new to dependency management, the second option (`requirements.txt`) is more straightforward.
+
+## Setting up the script  
 
 To configure the script, use the `config.yaml` file. Here's an example configuration:  
 
@@ -38,64 +76,26 @@ keep_files:                       # Files marked as false will be deleted
   cover: false
 ```
 
-### How to Use It  
+### How to use it  
 
-1. **Adjust the Settings**  
+1. **Adjust the settings**  
    - Open the `config.yaml` file in a text editor.  
    - Set the `resolution` to the desired quality (e.g., "1K", "2K").  
    - Choose the `file_type` (either "JPG" or "PNG").  
    - Specify the folder for downloaded textures under `downloads_folder`.  
 
-2. **Configure Unzipping**  
+2. **Configure unzipping**  
    - If you want the textures to be automatically extracted, set `enabled` to `true`.  
    - Define the folder for unzipped files under `folder`.  
 
-3. **Manage File Types**  
+3. **Manage file types**  
    - In the `keep_files` section, mark the file types you want to keep as `true`.  
    - Any file type set to `false` will be deleted after extraction.  
 
-4. **Run the Script**  
+4. **Run the script**  
    - Save your changes to the `config.yaml` file.  
    - Execute the script, and it will follow the configuration to download, unzip, and manage the textures automatically.
 
-## Installation  
-
-You can set up the project in two ways: using **Poetry** or a traditional setup with `requirements.txt`. Choose the method that best suits your workflow.  
-
-### Option 1: Using Poetry  
-1. Ensure you have [Poetry](https://python-poetry.org/) installed.  
-   ```bash
-   pip install poetry
-   ```
-2. Clone the repository:  
-   ```bash
-   git clone https://github.com/alvarognnzz/ambientcg-downloader
-   cd ambientcg-downloader
-   ```
-3. Install dependencies:  
-   ```bash
-   poetry install
-   ```
-   ```
-4. Run the script:  
-   ```bash
-   poetry run python main.py
-   ```
-
-### Option 2: Without Poetry (using `requirements.txt`)  
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/alvarognnzz/ambientcg-downloader
-   cd ambientcg-downloader
-   ```
-2. Install dependencies:  
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the script:  
-   ```bash
-   python script.py
-   ```
----
-
-Both methods will set up the environment for running the project. If you're new to dependency management, the second option (`requirements.txt`) is more straightforward.
+> [!WARNING]  
+> The ambientCG texture library is quite large, with a size of up to 10GB at 1K resolution.  
+> If you select a higher resolution (e.g., 2K, 4K, or 8K), the download process may take several hours depending on your internet speed and system performance.
