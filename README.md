@@ -33,6 +33,11 @@ You can set up the project in two ways: using **Poetry** or a traditional setup 
    ```bash
    poetry run python main.py
    ```
+-  Note: if on an immutable distro distro run this before pip
+   ```
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
 
 ### Option 2: Without Poetry
 1. Clone the repository:  
@@ -46,8 +51,14 @@ You can set up the project in two ways: using **Poetry** or a traditional setup 
    ```
 3. Run the script:  
    ```bash
-   python script.py
+   python main.py
    ```
+-  Note: if on an immutable distro distro run this before pip
+   ```
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
+
 
 Both methods will set up the environment for running the project. If you're new to dependency management, the second option (`requirements.txt`) is more straightforward.
 
