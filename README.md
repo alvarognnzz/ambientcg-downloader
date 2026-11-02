@@ -46,7 +46,7 @@ You can set up the project in two ways: using **Poetry** or a traditional setup 
    ```
 3. Run the script:  
    ```bash
-   python script.py
+   python main.py
    ```
 
 Both methods will set up the environment for running the project. If you're new to dependency management, the second option (`requirements.txt`) is more straightforward.
